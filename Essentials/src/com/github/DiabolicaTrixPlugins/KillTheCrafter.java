@@ -16,12 +16,12 @@ public class KillTheCrafter extends JavaPlugin{
 	{
 		this.getConfig().options().copyDefaults(true);
 		this.saveConfig();
-		System.out.println("Start"); 
+		System.out.println("Start !"); 
 		
 	}
 	
 	public void onDisable() 
 	{
-		System.out.println("Stop"); 
+		System.out.println("Stop !"); 
 	}
 }
