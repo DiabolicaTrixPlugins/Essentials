@@ -2,3 +2,7 @@ name: Essentials
 version: 1.0.0
 author: DiabolicaTrix
 main: com.github.DiabolicaTrixPlugins.Essentials
+commands:
+ join:
+   description: "Join Flood Escape !"
+    
