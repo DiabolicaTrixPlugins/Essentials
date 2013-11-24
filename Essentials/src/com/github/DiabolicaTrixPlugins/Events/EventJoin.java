@@ -24,12 +24,8 @@ public class EventJoin implements CommandExecutor {
 		String help = ChatColor.RED + "Error !";
 		try
 		{
-			int x = this.plugin.getConfig().getInt("essentials.coordadmin.x");
-			int y = this.plugin.getConfig().getInt("essentials.coordadmin.y");
-			int z = this.plugin.getConfig().getInt("essentials.coordadmin.z");
-			String world = this.plugin.getConfig().getString("essentials.coordadmin.world");
 			Player p = (Player) sender;
-			p.teleport(new Location(Bukkit.getWorld(world), x, y, z));
+			p.teleport(new Location(Bukkit.getWorld("world"), -581, 4, -200));
 			p.setGameMode(GameMode.ADVENTURE);
 			sender.sendMessage(ChatColor.GREEN + "[" + ChatColor.RED + "Flood Escape" + ChatColor.GREEN + "] Welcome to Flood Escape !");
 		}
