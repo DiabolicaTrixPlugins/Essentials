@@ -19,7 +19,7 @@ public class CommandJoin implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) 
 	{
-		String help = ChatColor.RED + "Usage: /join floodescape";
+		String help = ChatColor.RED + "Usage: /join <game>";
 		try
 		{
 		}
