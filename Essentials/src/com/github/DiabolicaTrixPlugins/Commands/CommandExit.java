@@ -12,24 +12,25 @@ import org.bukkit.entity.Player;
 import com.github.DiabolicaTrixPlugins.Essentials;
 
 
-public class CommandJoinFloodEscape implements CommandExecutor {
+public class CommandExit implements CommandExecutor {
 	private Essentials plugin;
+	public boolean ingame = true;
 
-	public CommandJoinFloodEscape(Essentials plugin) {
+	public CommandExit(Essentials plugin) {
 		this.plugin = plugin;
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) 
 	{
-		String help = ChatColor.RED + "Usage: /join floodescape";
+		String help = ChatColor.RED + "Usage: /exit";
 		try
 		{
-			if (args[0].equalsIgnoreCase("floodescape")) {
+			if (ingame == true) {
 				Player p = (Player) sender;
 				p.teleport(new Location(Bukkit.getWorld("world"), -580, 4, -199));
 				p.setGameMode(GameMode.ADVENTURE);
-				sender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "Flood Escape" + ChatColor.GRAY + "]: " + ChatColor.GOLD + "Welcome to Flood Escape !");
-				boolean ingame = true;
+				sender.sendMessage(ChatColor.GRAY + "You left the game");
+				boolean ingame = false;
 			}
 		}
 		catch (Exception e)
