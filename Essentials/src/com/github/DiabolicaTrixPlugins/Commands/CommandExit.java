@@ -10,11 +10,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.github.DiabolicaTrixPlugins.Essentials;
+import com.github.DiabolicaTrixPlugins.Players.Player2;
 
 
 public class CommandExit implements CommandExecutor {
 	private Essentials plugin;
-	public boolean ingame = true;
+	
+	Player2 player2 = new Player2(false);
 
 	public CommandExit(Essentials plugin) {
 		this.plugin = plugin;
@@ -25,12 +27,15 @@ public class CommandExit implements CommandExecutor {
 		String help = ChatColor.RED + "Usage: /exit";
 		try
 		{
-			if (ingame == true) {
+			if (player2.getInGame() == true) {
 				Player p = (Player) sender;
 				p.teleport(new Location(Bukkit.getWorld("world"), -580, 4, -199));
 				p.setGameMode(GameMode.ADVENTURE);
 				sender.sendMessage(ChatColor.GRAY + "You left the game");
-				boolean ingame = false;
+				player2.setInGame(false);
+			}
+			else {
+				sender.sendMessage(ChatColor.RED + "You are currently in a game");
 			}
 		}
 		catch (Exception e)
@@ -39,5 +44,6 @@ public class CommandExit implements CommandExecutor {
 		}
 		return true;
 	}
+	
 }
 

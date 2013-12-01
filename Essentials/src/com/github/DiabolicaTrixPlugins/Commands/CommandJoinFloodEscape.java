@@ -10,10 +10,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.github.DiabolicaTrixPlugins.Essentials;
+import com.github.DiabolicaTrixPlugins.Players.Player2;
 
 
 public class CommandJoinFloodEscape implements CommandExecutor {
 	private Essentials plugin;
+	
+	Player2 player2 = new Player2(false);
 
 	public CommandJoinFloodEscape(Essentials plugin) {
 		this.plugin = plugin;
@@ -29,7 +32,7 @@ public class CommandJoinFloodEscape implements CommandExecutor {
 				p.teleport(new Location(Bukkit.getWorld("world"), -580, 4, -199));
 				p.setGameMode(GameMode.ADVENTURE);
 				sender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RED + "Flood Escape" + ChatColor.GRAY + "]: " + ChatColor.GOLD + "Welcome to Flood Escape !");
-				boolean ingame = true;
+				player2.setInGame(true);
 			}
 		}
 		catch (Exception e)
@@ -38,5 +41,5 @@ public class CommandJoinFloodEscape implements CommandExecutor {
 		}
 		return true;
 	}
-}
 
+}
