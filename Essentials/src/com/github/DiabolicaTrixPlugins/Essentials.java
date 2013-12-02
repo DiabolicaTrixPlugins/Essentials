@@ -10,7 +10,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.github.DiabolicaTrixPlugins.Commands.CommandExit;
 import com.github.DiabolicaTrixPlugins.Commands.CommandJoin;
 import com.github.DiabolicaTrixPlugins.Commands.CommandJoinFloodEscape;
-import com.github.DiabolicaTrixPlugins.Players.Player2;
 
 
 public class Essentials extends JavaPlugin{

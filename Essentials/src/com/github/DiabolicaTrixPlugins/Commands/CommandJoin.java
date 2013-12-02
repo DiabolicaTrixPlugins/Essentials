@@ -18,20 +18,26 @@ public class CommandJoin implements CommandExecutor {
 	{
 		String help = ChatColor.RED + "Usage: /join <game>";
 		Player p = (Player) sender;
-        if(cmd.getName().equalsIgnoreCase("join")){
-            if(args.length != 1){
-                p.sendMessage("Insuffcient arguments!");
-                return true;
-            }
-            int j = 0;
-            try{
-                j = Integer.parseInt(args[0]);
-            }catch(NumberFormatException e){
-                p.sendMessage("Invalid arena ID");
-            }
-            GameManager.getManager().addPlayer(p, j);
+		if(cmd.getName().equalsIgnoreCase("join")){
+			if(args.length != 1){
+				p.sendMessage("Insuffcient arguments!");
+				return true;
+			}
+			int j = 0;
+			try{
+				j = Integer.parseInt(args[0]);
+			}catch(NumberFormatException e){
+				p.sendMessage("Invalid arena ID");
+			}
+			GameManager.getManager().addPlayer(p, j);
 
-            return true;
-        }
+			return true;
+		}
+		if(cmd.getName().equalsIgnoreCase("leave")){
+			GameManager.getManager().removePlayer(p);
+			p.sendMessage("You have left the arena!");
+
+			return true;
+		}
 	}
 }
